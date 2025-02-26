@@ -7,33 +7,21 @@ const next = document.querySelector('.next')
 const slideWidth = slide[0].clientWidth
 
 next.addEventListener('click', () => {
-	nextSlide()
+	index++
+	if (index >= totalLength) {
+		index = 0
+	}
+	updateSlide()
 })
 
 prev.addEventListener('click', () => {
-	prevSlide()
+	index--
+	if (index < 0) {
+		index = totalLength - 1
+	}
+	updateSlide()
 })
 
 function updateSlide() {
 	slides.style.transform = `translateX(-${index * slideWidth}px)`
 }
-
-function nextSlide() {
-	index++
-	if (index >= totalSlides) {
-		index = 0
-	}
-	updateSlide()
-}
-
-function prevSlide() {
-	index--
-	if (index < 0) {
-		index = totalSlides - 1
-	}
-	updateSlide()
-}
-
-setInterval(() => {
-	nextSlide()
-}, 3000)
