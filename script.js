@@ -25,3 +25,7 @@ prev.addEventListener('click', () => {
 function updateSlide() {
 	slides.style.transform = `translateX(-${index * slideWidth}px)`
 }
+
+setInterval(() => {
+	nextSlide()
+}, 3000)
