@@ -395,6 +395,7 @@ body {
 /* PROMOS MEDIA START */
 @media (max-width: 890px) {
 	.promos__inner .promos__inner-grid-container {
+		overflow: hidden;
 		display: grid;
 		grid-template-areas:
 			'slider slider slider'
@@ -402,7 +403,9 @@ body {
 			'offers offers offers';
 		grid-gap: 30px;
 	}
-
+	.promos__inner-offers {
+		align-items: unset;
+	}
 	.promos__inner .promos__inner-slider img:first-child {
 		width: 355px;
 		height: 175px;
@@ -1214,4 +1217,14 @@ body {
 	.p {
 		color: rgba(28, 41, 77, 0.5);
 	}
+}
+
+.slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.slider-container {
+	width: 750px;
+	overflow: hidden;
 }
